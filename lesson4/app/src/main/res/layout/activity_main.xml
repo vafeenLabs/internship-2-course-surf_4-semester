@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:id="@+id/spaceXName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="SpaceX"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023" />
+
+    <View
+        android:id="@+id/rezdelitel1"
+        android:layout_width="1dp"
+        android:layout_height="1dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tabView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.3333"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <View
+        android:id="@+id/rezdelitel2"
+        android:layout_width="1dp"
+        android:layout_height="1dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tabView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.6666"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <View
+        android:id="@+id/spacer"
+
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spaceXName" />
+
+
+    <View
+        android:id="@+id/tabView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/tab_row_shape"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spacer"
+        app:layout_constraintVertical_bias="0.006" />
+
+    <TextView
+        android:id="@+id/upcoming"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:clickable="true"
+
+        android:focusable="true"
+        android:minHeight="48dp"
+        android:text="Upcoming"
+        android:textSize="@dimen/tabTextSize"
+        app:layout_constraintEnd_toStartOf="@id/rezdelitel1"
+        app:layout_constraintHorizontal_bias="0.63"
+        app:layout_constraintStart_toStartOf="@+id/tabView"
+        app:layout_constraintTop_toTopOf="@+id/tabView" />
+
+    <TextView
+        android:id="@+id/launchers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:minHeight="48dp"
+        android:text="Launchers"
+        android:textSize="@dimen/tabTextSize"
+
+        app:layout_constraintEnd_toStartOf="@id/rezdelitel2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@id/rezdelitel1"
+        app:layout_constraintTop_toTopOf="@+id/upcoming"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/rockets"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+
+        android:minHeight="48dp"
+        android:text="Rockets"
+        android:textSize="@dimen/tabTextSize"
+        app:layout_constraintBottom_toBottomOf="@+id/tabView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@id/rezdelitel2"
+        app:layout_constraintTop_toTopOf="@+id/upcoming"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <!--  Upcoming views-->
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/upComingFragmentLaunch"
+        android:name="ru.vafeen.hwonlesson4.ui.fragments.upcoming.UpComingLaunchFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/launchers"
+        app:layout_constraintVertical_bias="0.06"
+        app:layout_constraintWidth_percent="0.8" />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/upComingFragmentLaunchDate"
+        android:name="ru.vafeen.hwonlesson4.ui.fragments.upcoming.UpComingItemFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/upComingFragmentLaunch"
+        app:layout_constraintTop_toBottomOf="@+id/upComingFragmentLaunch"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/upComingFragmentLaunchSite"
+        android:name="ru.vafeen.hwonlesson4.ui.fragments.upcoming.UpComingItemFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/upComingFragmentLaunchDate"
+        app:layout_constraintTop_toBottomOf="@+id/upComingFragmentLaunchDate"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/upComingFragmentLaunchCountDown"
+        android:name="ru.vafeen.hwonlesson4.ui.fragments.upcoming.UpComingItemFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/upComingFragmentLaunchSite"
+        app:layout_constraintTop_toBottomOf="@+id/upComingFragmentLaunchSite"
+        app:layout_constraintVertical_bias="0.0" />
+
+
+    <!--    Launchers view-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/launchesList"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="gone"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/launchers"
+        app:layout_constraintVertical_bias="0.0"
+        tools:listitem="@layout/launch" />
+
+    <!--Rockets view-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rocketsList"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="gone"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/launchers"
+        app:layout_constraintVertical_bias="0.0"
+        tools:listitem="@layout/rocket" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
