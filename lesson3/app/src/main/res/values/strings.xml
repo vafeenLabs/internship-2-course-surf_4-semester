@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">HW on Lesson3</string>
+    <string name="secret_key">secret key</string>
+    <string name="message_sml">message</string>
+</resources>
